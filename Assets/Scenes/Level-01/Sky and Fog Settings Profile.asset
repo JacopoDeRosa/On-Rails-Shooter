@@ -196,7 +196,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 2
   rayTracing:
     m_OverrideState: 0
     m_Value: 0
@@ -206,13 +206,13 @@ MonoBehaviour:
     min: 0
     max: 4
   directLightingStrength:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
     min: 0
     max: 1
   radius:
-    m_OverrideState: 0
-    m_Value: 2
+    m_OverrideState: 1
+    m_Value: 0.35
     min: 0.25
     max: 5
   spatialBilateralAggressiveness:
@@ -248,12 +248,12 @@ MonoBehaviour:
     m_Value: 0
   m_MaximumRadiusInPixels:
     m_OverrideState: 0
-    m_Value: 32
+    m_Value: 40
     min: 16
     max: 256
   m_BilateralUpsample:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   m_DirectionCount:
     m_OverrideState: 0
     m_Value: 2
@@ -261,11 +261,11 @@ MonoBehaviour:
     max: 6
   m_RayLength:
     m_OverrideState: 0
-    m_Value: 3
+    m_Value: 20
     min: 0.01
   m_SampleCount:
     m_OverrideState: 0
-    m_Value: 2
+    m_Value: 8
     min: 1
     max: 64
   m_Denoise:
@@ -273,7 +273,7 @@ MonoBehaviour:
     m_Value: 1
   m_DenoiserRadius:
     m_OverrideState: 0
-    m_Value: 0.5
+    m_Value: 0.65
     min: 0.001
     max: 1
 --- !u!114 &-4151792930034644520
@@ -398,6 +398,72 @@ MonoBehaviour:
   filter:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &-2408960797573645864
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b145d2b9ee1ac4f846968484e7485a, type: 3}
+  m_Name: ContactShadows
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  quality:
+    m_OverrideState: 1
+    m_Value: 2
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  length:
+    m_OverrideState: 1
+    m_Value: 0.15
+    min: 0
+    max: 1
+  opacity:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  distanceScaleFactor:
+    m_OverrideState: 1
+    m_Value: 0.461
+    min: 0
+    max: 1
+  maxDistance:
+    m_OverrideState: 1
+    m_Value: 75
+    min: 0
+  minDistance:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+  fadeDistance:
+    m_OverrideState: 0
+    m_Value: 5
+    min: 0
+  fadeInDistance:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  rayBias:
+    m_OverrideState: 1
+    m_Value: 0.2
+    min: 0
+    max: 1
+  thicknessScale:
+    m_OverrideState: 0
+    m_Value: 0.15
+    min: 0.02
+    max: 1
+  m_SampleCount:
+    m_OverrideState: 1
+    m_Value: 12
+    min: 4
+    max: 64
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +483,8 @@ MonoBehaviour:
   - {fileID: 7642060734654139733}
   - {fileID: 6518690359674115678}
   - {fileID: -5066823043381629055}
+  - {fileID: 4399356985421461547}
+  - {fileID: -2408960797573645864}
 --- !u!114 &1142777632297148762
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -439,6 +507,55 @@ MonoBehaviour:
     m_Value: 0
   fogType:
     m_OverrideState: 1
+    m_Value: 0
+--- !u!114 &4399356985421461547
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddcec8a8eb2d684d833ac8f5d26aebd, type: 3}
+  m_Name: HDShadowSettings
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  maxShadowDistance:
+    m_OverrideState: 0
+    m_Value: 500
+    min: 0
+  directionalTransmissionMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  cascadeShadowSplitCount:
+    m_OverrideState: 0
+    m_Value: 4
+    min: 1
+    max: 4
+  cascadeShadowSplit0:
+    m_OverrideState: 1
+    m_Value: 0.1
+  cascadeShadowSplit1:
+    m_OverrideState: 1
+    m_Value: 0.2
+  cascadeShadowSplit2:
+    m_OverrideState: 1
+    m_Value: 0.4
+  cascadeShadowBorder0:
+    m_OverrideState: 0
+    m_Value: 0
+  cascadeShadowBorder1:
+    m_OverrideState: 0
+    m_Value: 0
+  cascadeShadowBorder2:
+    m_OverrideState: 0
+    m_Value: 0
+  cascadeShadowBorder3:
+    m_OverrideState: 0
     m_Value: 0
 --- !u!114 &6518690359674115678
 MonoBehaviour:
