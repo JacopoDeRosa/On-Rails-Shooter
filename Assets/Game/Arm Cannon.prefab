@@ -9900,7 +9900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _roundsPerMinute: 700
-  _windUpTime: 1
+  _windUpTime: 0.8
   _windDownTime: 2
   _barrels: {fileID: 1573206499992406472}
   _bullet: {fileID: 2769580734158532345}
