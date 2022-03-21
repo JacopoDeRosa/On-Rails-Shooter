@@ -12,8 +12,17 @@ public class HandCannon : MonoBehaviour
     [SerializeField] private ParticleSystem _bullet;
     [SerializeField] private ParticleSystem _muzzleBlast;
 
+    public UnityEvent onWindUp;
+    public UnityEvent onStartedFiring;
+    public UnityEvent onStoppedFiring;
+    public UnityEvent onWindDown;
+
     private float _currentSpeed = 0;
     private bool _firing = false;
+
+    private bool _startedWindingUp = false;
+    private bool _startedShooting = false;
+    private bool _startedWindingDown = false;
 
     private float RotationSpeed { get => _roundsPerMinute; }
     private bool BarrelAligned 
@@ -43,26 +52,48 @@ public class HandCannon : MonoBehaviour
         {
             if (_currentSpeed < RotationSpeed)
             {
+                if(_startedWindingUp == false)
+                {
+                    onWindUp.Invoke();
+                    _startedWindingUp = true;
+                    TryResetWindDown();
+                }
                 _currentSpeed += WindUpSpeed * Time.fixedDeltaTime;
             }
             else
             {
                 _currentSpeed = RotationSpeed;
+                TryResetWindingUp();
             }
             if (_currentSpeed == RotationSpeed && BarrelAligned)
             {
+                if(_startedShooting == false)
+                {
+                    onStartedFiring.Invoke();
+                    _startedShooting = true;
+                }
                 _bullet.Play();
                 _muzzleBlast.Play();
             }
         }
         else
         {
+            TryResetWindingUp();
+            TryResetStartedShooting();
+            onStoppedFiring.Invoke();
+
             if(_currentSpeed > 0)
             {
+                if(_startedWindingDown == false)
+                {
+                    onWindDown.Invoke();
+                    _startedWindingDown = true;
+                }
                 _currentSpeed -= WindDownSpeed * Time.fixedDeltaTime;
             }
             else
             {
+                TryResetWindDown();
                 _currentSpeed = 0;
             }
         }
@@ -72,5 +103,16 @@ public class HandCannon : MonoBehaviour
         }
     }
 
-
+    private void TryResetWindingUp()
+    {
+        if (_startedWindingUp) _startedWindingUp = false;
+    }
+    private void TryResetStartedShooting()
+    {
+        if (_startedShooting) _startedShooting = false;
+    }
+    private void TryResetWindDown()
+    {
+        if (_startedWindingDown) _startedWindingDown = false;
+    }
 }
