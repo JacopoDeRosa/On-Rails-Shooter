@@ -17,8 +17,15 @@ public class ShootingSystem : MonoBehaviour
         if (_input == null) _input = FindObjectOfType<PlayerInput>();
         _input.actions["Fire"].started += OnFireDown;
         _input.actions["Fire"].canceled += OnFireUp;
-
         _input.actions["Mouse Position"].performed += OnMousePosition;
+    }
+
+    private void OnDestroy()
+    {
+        if (_input == null) return;
+        _input.actions["Fire"].started -= OnFireDown;
+        _input.actions["Fire"].canceled -= OnFireUp;
+        _input.actions["Mouse Position"].performed -= OnMousePosition;
     }
 
 
@@ -41,7 +48,6 @@ public class ShootingSystem : MonoBehaviour
         _leftArm.StopFiring();
         _rightArm.StopFiring();
     }
-
     private Vector3 FindAimPoint()
     {
         Vector3 aimPoint = Vector3.zero;

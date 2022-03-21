@@ -10,6 +10,7 @@ public class HandCannon : MonoBehaviour
     [SerializeField] private float _windDownTime;
     [SerializeField] private Transform _barrels;
     [SerializeField] private ParticleSystem _bullet;
+    [SerializeField] private ParticleSystem _muzzleBlast;
 
     private float _currentSpeed = 0;
     private bool _firing = false;
@@ -51,6 +52,7 @@ public class HandCannon : MonoBehaviour
             if (_currentSpeed == RotationSpeed && BarrelAligned)
             {
                 _bullet.Play();
+                _muzzleBlast.Play();
             }
         }
         else
