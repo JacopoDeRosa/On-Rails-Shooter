@@ -8,14 +8,12 @@ public class HandCannon : MonoBehaviour
     [SerializeField] private float _roundsPerMinute;
     [SerializeField] private float _windUpTime;
     [SerializeField] private float _windDownTime;
-    [SerializeField] private bool _firing = false;
     [SerializeField] private Transform _barrels;
     [SerializeField] private ParticleSystem _bullet;
 
-    [SerializeField]
     private float _currentSpeed = 0;
+    private bool _firing = false;
 
-    private float RoundsPerSecond { get => 60 / _roundsPerMinute; }
     private float RotationSpeed { get => _roundsPerMinute; }
     private bool BarrelAligned 
     {
