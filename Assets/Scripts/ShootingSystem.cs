@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 
 public class ShootingSystem : MonoBehaviour
 {
-    [SerializeField] private Vector2 _mousePosition;
+   
     [SerializeField] private HandCannon _leftArm;
     [SerializeField] private HandCannon _rightArm;
-    [SerializeField] private ParticleSystem[] _bullets;
+    [SerializeField] private float _trackingSpeed;
     [SerializeField] private float _zeroDistance;
     [SerializeField] private PlayerInput _input;
+
+    private Vector2 _mousePosition;
+    private Vector3 _targetPoint;
+    private Vector3 _currentAimPoint;
 
     private void Start()
     {
@@ -19,7 +23,6 @@ public class ShootingSystem : MonoBehaviour
         _input.actions["Fire"].canceled += OnFireUp;
         _input.actions["Mouse Position"].performed += OnMousePosition;
     }
-
     private void OnDestroy()
     {
         if (_input == null) return;
@@ -27,15 +30,10 @@ public class ShootingSystem : MonoBehaviour
         _input.actions["Fire"].canceled -= OnFireUp;
         _input.actions["Mouse Position"].performed -= OnMousePosition;
     }
-
-
-
     private void OnMousePosition(InputAction.CallbackContext context)
     {
         _mousePosition = context.ReadValue<Vector2>();
-        Vector3 aimPoint = FindAimPoint();
-        _leftArm.transform.LookAt(aimPoint);
-        _rightArm.transform.LookAt(aimPoint);
+        _targetPoint = FindAimPoint();
        
     }
     private void OnFireDown(InputAction.CallbackContext context)
@@ -62,6 +60,14 @@ public class ShootingSystem : MonoBehaviour
         }
         return aimPoint;
     }
-  
 
+    private void Update()
+    {
+        if(_currentAimPoint != _targetPoint)
+        {
+            _currentAimPoint = Vector3.Lerp(_currentAimPoint, _targetPoint, _trackingSpeed * Time.deltaTime);
+            _leftArm.transform.LookAt(_currentAimPoint);
+            _rightArm.transform.LookAt(_currentAimPoint);
+        }      
+    }
 }

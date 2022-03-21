@@ -9550,13 +9550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989c0dbfad04981408fa41655268383e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mousePosition: {x: 0, y: 0}
   _leftArm: {fileID: 751384214}
   _rightArm: {fileID: 7041134182371492371}
-  _bullets:
-  - {fileID: 7041134182597337374}
-  - {fileID: 0}
-  _zeroDistance: 10
+  _trackingSpeed: 7.5
+  _zeroDistance: 15
   _input: {fileID: 0}
 --- !u!1 &7041134181669205769
 GameObject:
@@ -9590,11 +9587,6 @@ MonoBehaviour:
 --- !u!4 &7041134182371492372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2769580732237401587, guid: f30c8ba528eeae147b5c962a2fc9a8fe, type: 3}
-  m_PrefabInstance: {fileID: 5177069445387636711}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7041134182597337374 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2769580734158532345, guid: f30c8ba528eeae147b5c962a2fc9a8fe, type: 3}
   m_PrefabInstance: {fileID: 5177069445387636711}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7041134183001525760
