@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class ShootingSystem : MonoBehaviour
 {
     [SerializeField] private Vector2 _mousePosition;
-    [SerializeField] private Transform _leftArm;
-    [SerializeField] private Transform _rightArm;
+    [SerializeField] private HandCannon _leftArm;
+    [SerializeField] private HandCannon _rightArm;
     [SerializeField] private ParticleSystem[] _bullets;
     [SerializeField] private float _zeroDistance;
     [SerializeField] private PlayerInput _input;
@@ -27,20 +27,19 @@ public class ShootingSystem : MonoBehaviour
     {
         _mousePosition = context.ReadValue<Vector2>();
         Vector3 aimPoint = FindAimPoint();
-        _leftArm.LookAt(aimPoint);
-        _rightArm.LookAt(aimPoint);
+        _leftArm.transform.LookAt(aimPoint);
+        _rightArm.transform.LookAt(aimPoint);
        
     }
     private void OnFireDown(InputAction.CallbackContext context)
     {
-        foreach (ParticleSystem system in _bullets)
-        {
-            system.Play();
-        }
+        _leftArm.StartFiring();
+        _rightArm.StartFiring();
     }
     private void OnFireUp(InputAction.CallbackContext context)
     {
-        print("Mouse Up");
+        _leftArm.StopFiring();
+        _rightArm.StopFiring();
     }
 
     private Vector3 FindAimPoint()
