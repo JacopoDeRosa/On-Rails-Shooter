@@ -10027,6 +10027,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _barrelsRenderer: {fileID: 3440054492489052002}
+  _heatUpTime: 10
+  _coolDownTime: 4
   _coolColor: {r: 0, g: 0, b: 0, a: 1}
   _hotColor: {r: 766.9961, g: 8.031373, b: 0, a: 1}
   _effectCurve:

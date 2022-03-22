@@ -5,6 +5,7 @@ using UnityEngine;
 public class HandCannonHeat : MonoBehaviour
 {
     [SerializeField] MeshRenderer _barrelsRenderer;
+    [SerializeField] private float _heatUpTime, _coolDownTime;
     [ColorUsage(true, true)]
     [SerializeField] private Color _coolColor;
     [ColorUsage(true, true)]
@@ -26,12 +27,12 @@ public class HandCannonHeat : MonoBehaviour
        
         if(_firing && _heat < 1)
         {
-            _heat += 0.1f * Time.deltaTime;
+            _heat += (1 / _heatUpTime) * Time.deltaTime;
             UpdateColor();
         }
         else if(_heat > 0)
         {         
-            _heat -= 0.25f * Time.deltaTime;
+            _heat -= (1 / _coolDownTime) * Time.deltaTime;
             UpdateColor();
         }
 
