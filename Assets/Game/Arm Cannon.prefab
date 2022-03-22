@@ -175,7 +175,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5037,7 +5037,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9861,6 +9861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2769580732237401587}
   - component: {fileID: 2769580732237401588}
+  - component: {fileID: 7152715698637379092}
   m_Layer: 0
   m_Name: Arm Cannon
   m_TagString: Untagged
@@ -9947,6 +9948,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7152715698637379092}
+        m_TargetAssemblyTypeName: HandCannonHeat, Assembly-CSharp
+        m_MethodName: SetFiring
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onStoppedFiring:
     m_PersistentCalls:
       m_Calls:
@@ -9954,6 +9967,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Stop
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7152715698637379092}
+        m_TargetAssemblyTypeName: HandCannonHeat, Assembly-CSharp
+        m_MethodName: SetFiring
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9989,6 +10014,72 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7152715698637379092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769580732237401586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b13e8649d613e048990210cdc6103bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _barrelsRenderer: {fileID: 3440054492489052002}
+  _coolColor: {r: 0, g: 0, b: 0, a: 1}
+  _hotColor: {r: 766.9961, g: 8.031373, b: 0, a: 1}
+  _effectCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -0.012093739
+      outSlope: -0.012093739
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.24219921
+    - serializedVersion: 3
+      time: 0.46990663
+      value: 0.01261536
+      inSlope: 0.08585414
+      outSlope: 0.08585414
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.45723385
+    - serializedVersion: 3
+      time: 0.7158101
+      value: 0.07951308
+      inSlope: 0.56720906
+      outSlope: 0.56720906
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6773249
+      outWeight: 0.6460795
+    - serializedVersion: 3
+      time: 0.9062455
+      value: 0.4760547
+      inSlope: 4.610785
+      outSlope: 4.610785
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.024974752
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 4.5283027
+      outSlope: 4.5283027
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.008333325
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4675699789205599655
 GameObject:
   m_ObjectHideFlags: 0
@@ -10043,7 +10134,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -15032,7 +15123,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -19894,7 +19985,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -24756,7 +24847,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -29618,7 +29709,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -34439,6 +34530,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2769580732237401587}
     m_Modifications:
+    - target: {fileID: -8909292274202909826, guid: ad419b5697176d64db6498339c4b8b91, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 692e14f9aa9e0cd4398532f4bc6fdfdc, type: 2}
     - target: {fileID: -8679921383154817045, guid: ad419b5697176d64db6498339c4b8b91, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -34483,6 +34578,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8515743578739334750, guid: ad419b5697176d64db6498339c4b8b91, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfd80e6c1ce27e9408d7d22a7325276a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: ad419b5697176d64db6498339c4b8b91, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 692e14f9aa9e0cd4398532f4bc6fdfdc, type: 2}
     - target: {fileID: 919132149155446097, guid: ad419b5697176d64db6498339c4b8b91, type: 3}
       propertyPath: m_Name
       value: Arm Cannon Model
@@ -34497,6 +34600,11 @@ Transform:
 --- !u!4 &1573206499992406472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5495902304160430328, guid: ad419b5697176d64db6498339c4b8b91, type: 3}
+  m_PrefabInstance: {fileID: 2769580733921382080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3440054492489052002 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8515743578739334750, guid: ad419b5697176d64db6498339c4b8b91, type: 3}
   m_PrefabInstance: {fileID: 2769580733921382080}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6187035836527134074
@@ -34568,13 +34676,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
---- !u!4 &2769580734158532346 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8337081349769210752, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
-  m_PrefabInstance: {fileID: 6187035836527134074}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &2769580734158532345 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8337081349769210755, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+  m_PrefabInstance: {fileID: 6187035836527134074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2769580734158532346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8337081349769210752, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
   m_PrefabInstance: {fileID: 6187035836527134074}
   m_PrefabAsset: {fileID: 0}
