@@ -11,6 +11,7 @@ public class HandCannon : MonoBehaviour
     [SerializeField] private Transform _barrels;
     [SerializeField] private ParticleSystem _bullet;
     [SerializeField] private ParticleSystem _muzzleBlast;
+    [SerializeField] private GameObject _hitFX;
 
     public UnityEvent onWindUp;
     public UnityEvent onStartedFiring;
@@ -43,7 +44,13 @@ public class HandCannon : MonoBehaviour
     }
     public void StopFiring()
     {
-        _firing = false;
+        _firing = false;       
+    }
+
+    public void OnParticleCollided(ParticleCollisionEvent collision)
+    {
+        var fx = Instantiate(_hitFX, collision.intersection, Quaternion.identity);
+        fx.transform.LookAt(collision.normal);
     }
 
     private void FixedUpdate()

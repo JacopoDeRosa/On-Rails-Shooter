@@ -9906,6 +9906,7 @@ MonoBehaviour:
   _barrels: {fileID: 1573206499992406472}
   _bullet: {fileID: 2769580734158532345}
   _muzzleBlast: {fileID: 8241476053718602735}
+  _hitFX: {fileID: 3098493275177861352, guid: 734b059564681534a8f4684c5d9739dd, type: 3}
   onWindUp:
     m_PersistentCalls:
       m_Calls:
@@ -34616,9 +34617,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2769580732237401587}
     m_Modifications:
+    - target: {fileID: -6404114259269800691, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+      propertyPath: onParticleCollision.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6404114259269800691, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+      propertyPath: onParticleCollision.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6404114259269800691, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+      propertyPath: onParticleCollision.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6404114259269800691, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+      propertyPath: onParticleCollision.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2769580732237401588}
+    - target: {fileID: -6404114259269800691, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+      propertyPath: onParticleCollision.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6404114259269800691, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+      propertyPath: onParticleCollision.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6404114259269800691, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+      propertyPath: onParticleCollision.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnParticleCollided
+      objectReference: {fileID: 0}
+    - target: {fileID: -6404114259269800691, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+      propertyPath: onParticleCollision.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandCannon, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -6404114259269800691, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
+      propertyPath: onParticleCollision.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8337081349769208957, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
       propertyPath: m_Name
-      value: Bullet R
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 8337081349769210752, guid: 13fe81e6cb84ecb42b9c4fb234038651, type: 3}
       propertyPath: m_RootOrder
