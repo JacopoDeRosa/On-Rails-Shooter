@@ -16,6 +16,11 @@ public class ShootingSystem : MonoBehaviour
     private Vector3 _targetPoint;
     private Vector3 _currentAimPoint;
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(_currentAimPoint, 0.25f);
+    }
+
     private void Start()
     {
         if (_input == null) _input = FindObjectOfType<PlayerInput>();
