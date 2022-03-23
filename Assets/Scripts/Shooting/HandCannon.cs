@@ -8,6 +8,7 @@ public class HandCannon : MonoBehaviour
     [SerializeField] private float _roundsPerMinute;
     [SerializeField] private float _windUpTime;
     [SerializeField] private float _windDownTime;
+    [SerializeField] private float _damage;
     [SerializeField] private Transform _barrels;
     [SerializeField] private ParticleSystem _bullet;
     [SerializeField] private ParticleSystem _muzzleBlast;
@@ -26,7 +27,7 @@ public class HandCannon : MonoBehaviour
     private bool _startedWindingDown = false;
 
     private float RotationSpeed { get => _roundsPerMinute; }
-    private bool BarrelAligned 
+    private bool BarrelAligned
     {
         get
         {
@@ -44,13 +45,21 @@ public class HandCannon : MonoBehaviour
     }
     public void StopFiring()
     {
-        _firing = false;       
+        _firing = false;
     }
 
     public void OnParticleCollided(ParticleCollisionEvent collision)
     {
         var fx = Instantiate(_hitFX, collision.intersection, Quaternion.identity);
         fx.transform.LookAt(collision.normal);
+        print(collision);
+        var collisionTransform = collision.colliderComponent.transform;
+        if (collisionTransform == null) return;
+        var root = collisionTransform.root;
+        if (root == null) return;
+        var health = root.GetComponent<Health>();
+        if (health == null) return;       
+        health.DealDamage(_damage);      
     }
 
     private void FixedUpdate()
@@ -59,7 +68,7 @@ public class HandCannon : MonoBehaviour
         {
             if (_currentSpeed < RotationSpeed)
             {
-                if(_startedWindingUp == false)
+                if (_startedWindingUp == false)
                 {
                     onWindUp.Invoke();
                     _startedWindingUp = true;
@@ -74,7 +83,7 @@ public class HandCannon : MonoBehaviour
             }
             if (_currentSpeed == RotationSpeed && BarrelAligned)
             {
-                if(_startedShooting == false)
+                if (_startedShooting == false)
                 {
                     onStartedFiring.Invoke();
                     _startedShooting = true;
@@ -89,9 +98,9 @@ public class HandCannon : MonoBehaviour
             TryResetStartedShooting();
             onStoppedFiring.Invoke();
 
-            if(_currentSpeed > 0)
+            if (_currentSpeed > 0)
             {
-                if(_startedWindingDown == false)
+                if (_startedWindingDown == false)
                 {
                     onWindDown.Invoke();
                     _startedWindingDown = true;

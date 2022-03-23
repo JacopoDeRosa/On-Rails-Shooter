@@ -11,7 +11,9 @@ public class Health : MonoBehaviour
     public UnityEvent<float> onDamageTaken;
     public UnityEvent onDeath;
 
+    [SerializeField]
     private float _currentHP;
+
     private bool _dead;
 
     private void Awake()

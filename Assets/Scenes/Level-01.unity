@@ -1708,7 +1708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159505b0dc0e8cf4397f8234887b1743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingHp: 100
+  _startingHp: 500
   onHealthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1742,6 +1742,7 @@ MonoBehaviour:
           m_StringArgument: Die
           m_BoolArgument: 0
         m_CallState: 2
+  _currentHP: 0
 --- !u!1 &322156272
 GameObject:
   m_ObjectHideFlags: 0
@@ -9823,13 +9824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7980995215958496210, guid: a8ad53136f1d83f4a99923dead17a52b, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Mutant:LeftToeBase'\n\tTransform 'Mutant:LeftLeg'\n\tTransform
-        'Mutant:RightToeBase'\n\tTransform 'Mutant:RightHandIndex3'\n\tTransform
-        'Mutant:RightHandThumb2'\n\tTransform 'Mutant:RightForeArm'\n\tTransform
-        'Mutant:LeftUpLeg'\n\tTransform 'Mutant:RightShoulder'\n\tTransform 'Mutant:RightHand'\n\tTransform
-        'Mutant:RightFoot'\n\tand more ..."
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7980995215958496210, guid: a8ad53136f1d83f4a99923dead17a52b, type: 3}
       propertyPath: m_ApplyRootMotion
