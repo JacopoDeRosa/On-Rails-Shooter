@@ -52,8 +52,11 @@ public class HandCannon : MonoBehaviour
     {
         var fx = Instantiate(_hitFX, collision.intersection, Quaternion.identity);
         fx.transform.LookAt(collision.normal);
-        print(collision);
-        var collisionTransform = collision.colliderComponent.transform;
+
+        // DELETE THIS And make an hitbox class to automatically send damage
+        var collisonCollider = collision.colliderComponent;
+        if (collisonCollider == null) return;
+        var collisionTransform = collisonCollider.transform;
         if (collisionTransform == null) return;
         var root = collisionTransform.root;
         if (root == null) return;

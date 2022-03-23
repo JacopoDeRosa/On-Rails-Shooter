@@ -29,8 +29,8 @@ public class GetParticleCollisions : MonoBehaviour
 
         foreach (ParticleCollisionEvent collision in _collisionEvents)
         {
-         //   print( "Particle from " + name + " intersected " + other.name + " at: " + collision.intersection);
-
+            //   print( "Particle from " + name + " intersected " + other.name + " at: " + collision.intersection);
+            if (collision.Equals(null)) return;
             onParticleCollision.Invoke(collision);
         }
     }
