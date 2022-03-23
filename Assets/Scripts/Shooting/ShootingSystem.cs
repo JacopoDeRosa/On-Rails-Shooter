@@ -65,7 +65,7 @@ public class ShootingSystem : MonoBehaviour
     {
         if(_currentAimPoint != _targetPoint)
         {
-            _currentAimPoint = Vector3.Lerp(_currentAimPoint, _targetPoint, _trackingSpeed * Time.deltaTime);
+            _currentAimPoint = Vector3.Lerp(_currentAimPoint, _targetPoint, _trackingSpeed * Time.deltaTime);   
             _leftArm.transform.LookAt(_currentAimPoint);
             _rightArm.transform.LookAt(_currentAimPoint);
         }      

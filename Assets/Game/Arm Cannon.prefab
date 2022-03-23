@@ -10031,7 +10031,7 @@ MonoBehaviour:
   _heatUpTime: 10
   _coolDownTime: 4
   _coolColor: {r: 0, g: 0, b: 0, a: 1}
-  _hotColor: {r: 766.9961, g: 8.031373, b: 0, a: 1}
+  _hotColor: {r: 95.87451, g: 1.0039216, b: 0, a: 1}
   _effectCurve:
     serializedVersion: 2
     m_Curve:
