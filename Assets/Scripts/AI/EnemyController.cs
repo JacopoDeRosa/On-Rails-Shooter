@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
     {
         if(_giveChase)
         {
-            _navmeshAgent.SetDestination(_target.position);
+          if(_navmeshAgent.isActiveAndEnabled)  _navmeshAgent.SetDestination(_target.position);
         }
         if(_navmeshAgent != null)
         {
