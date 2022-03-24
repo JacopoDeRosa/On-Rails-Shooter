@@ -35,6 +35,10 @@ public class EnemyController : MonoBehaviour
         if (_canGiveChase == false) return;
         _giveChase = true;
     }
+    public void DisableNavmesh()
+    {
+        _navmeshAgent.enabled = false;
+    }
 
     private void Update()
     {
