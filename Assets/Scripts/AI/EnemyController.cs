@@ -42,5 +42,9 @@ public class EnemyController : MonoBehaviour
         {
             _navmeshAgent.SetDestination(_target.position);
         }
+        if(_navmeshAgent != null)
+        {
+            _animator.SetFloat("Speed", _navmeshAgent.velocity.magnitude);
+        }
     }
 }
