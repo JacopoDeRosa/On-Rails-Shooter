@@ -5,6 +5,15 @@ using UnityEngine;
 public class ZombieController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] private bool _startsAwake;
+
+    private void Start()
+    {
+        if(_startsAwake)
+        {
+            WakeUp();
+        }
+    }
     public void WakeUp()
     {
         _animator.SetTrigger("Wake");
