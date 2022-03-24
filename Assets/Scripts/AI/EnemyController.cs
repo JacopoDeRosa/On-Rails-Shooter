@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private bool _startsAwake;
