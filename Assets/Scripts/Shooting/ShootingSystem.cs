@@ -10,6 +10,7 @@ public class ShootingSystem : MonoBehaviour
     [SerializeField] private HandCannon _rightArm;
     [SerializeField] private float _trackingSpeed;
     [SerializeField] private float _zeroDistance;
+    [SerializeField] private bool _outOfAmmo;
     [SerializeField] private PlayerInput _input;
 
     private Vector2 _mousePosition;
@@ -43,6 +44,12 @@ public class ShootingSystem : MonoBehaviour
     }
     private void OnFireDown(InputAction.CallbackContext context)
     {
+        if (_outOfAmmo)
+        {
+            _leftArm.OutOfAmmoClick();
+            _rightArm.OutOfAmmoClick();
+            return;
+        }
         _leftArm.StartFiring();
         _rightArm.StartFiring();
     }
@@ -74,5 +81,16 @@ public class ShootingSystem : MonoBehaviour
             _leftArm.transform.LookAt(_currentAimPoint);
             _rightArm.transform.LookAt(_currentAimPoint);
         }      
+    }
+
+    public void SetOutOfAmmo(bool outOfAmmo)
+    {
+        if(outOfAmmo == true)
+        {
+            _leftArm.StopFiring();
+            _rightArm.StopFiring();
+        }
+
+        _outOfAmmo = true;
     }
 }

@@ -18,6 +18,7 @@ public class HandCannon : MonoBehaviour
     public UnityEvent onStartedFiring;
     public UnityEvent onStoppedFiring;
     public UnityEvent onWindDown;
+    public UnityEvent onOutOfAmmoClick;
 
     private float _currentSpeed = 0;
     private bool _firing = false;
@@ -133,5 +134,10 @@ public class HandCannon : MonoBehaviour
     private void TryResetWindDown()
     {
         if (_startedWindingDown) _startedWindingDown = false;
+    }
+
+    public void OutOfAmmoClick()
+    {
+        onOutOfAmmoClick.Invoke();
     }
 }
