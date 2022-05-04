@@ -5,9 +5,8 @@ using UnityEngine.InputSystem;
 
 public class ShootingSystem : MonoBehaviour
 {
-   
-    [SerializeField] private HandCannon _leftArm;
-    [SerializeField] private HandCannon _rightArm;
+
+    [SerializeField] private RotaryCannon _cannon;
     [SerializeField] private float _trackingSpeed;
     [SerializeField] private float _zeroDistance;
     [SerializeField] private bool _outOfAmmo;
@@ -16,11 +15,6 @@ public class ShootingSystem : MonoBehaviour
     private Vector2 _mousePosition;
     private Vector3 _targetPoint;
     private Vector3 _currentAimPoint;
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(_currentAimPoint, 0.25f);
-    }
 
     private void Start()
     {
@@ -46,17 +40,14 @@ public class ShootingSystem : MonoBehaviour
     {
         if (_outOfAmmo)
         {
-            _leftArm.OutOfAmmoClick();
-            _rightArm.OutOfAmmoClick();
+            _cannon.OutOfAmmoClick();
             return;
         }
-        _leftArm.StartFiring();
-        _rightArm.StartFiring();
+        _cannon.StartFiring();
     }
     private void OnFireUp(InputAction.CallbackContext context)
     {
-        _leftArm.StopFiring();
-        _rightArm.StopFiring();
+        _cannon.StopFiring();
     }
     private Vector3 FindAimPoint()
     {
@@ -77,9 +68,8 @@ public class ShootingSystem : MonoBehaviour
     {
         if(_currentAimPoint != _targetPoint)
         {
-            _currentAimPoint = Vector3.Lerp(_currentAimPoint, _targetPoint, _trackingSpeed * Time.deltaTime);   
-            _leftArm.transform.LookAt(_currentAimPoint);
-            _rightArm.transform.LookAt(_currentAimPoint);
+            _currentAimPoint = Vector3.Lerp(_currentAimPoint, _targetPoint, _trackingSpeed * Time.deltaTime);       
+            _cannon.transform.LookAt(_currentAimPoint);
         }      
     }
 
@@ -87,8 +77,7 @@ public class ShootingSystem : MonoBehaviour
     {
         if(outOfAmmo == true)
         {
-            _leftArm.StopFiring();
-            _rightArm.StopFiring();
+            _cannon.StopFiring();
         }
 
         _outOfAmmo = true;

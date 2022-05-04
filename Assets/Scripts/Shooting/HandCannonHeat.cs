@@ -19,7 +19,7 @@ public class HandCannonHeat : MonoBehaviour
 
     void Start()
     {
-        _targetMat = _barrelsRenderer.material;
+      if(_barrelsRenderer != null) _targetMat = _barrelsRenderer.material;
     }
 
     private void Update()
@@ -42,7 +42,7 @@ public class HandCannonHeat : MonoBehaviour
     private void UpdateColor()
     {
         Color colorToSet = Color.Lerp(_coolColor, _hotColor, _effectCurve.Evaluate(_heat));
-        _targetMat.SetColor("_EmissiveColor", colorToSet);
+        if(_targetMat != null)   _targetMat.SetColor("_EmissiveColor", colorToSet);
     }
 
     public void SetFiring(bool status)

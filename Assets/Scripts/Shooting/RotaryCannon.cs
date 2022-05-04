@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HandCannon : MonoBehaviour
+public class RotaryCannon : MonoBehaviour
 {
     [SerializeField] private float _roundsPerMinute;
     [SerializeField] private float _windUpTime;
     [SerializeField] private float _windDownTime;
     [SerializeField] private float _damage;
     [SerializeField] private Transform _barrels;
+    [SerializeField] private int _numberOfBarrels = 6;
     [SerializeField] private ParticleSystem _bullet;
     [SerializeField] private ParticleSystem _muzzleBlast;
     [SerializeField] private GameObject _hitFX;
@@ -32,9 +33,9 @@ public class HandCannon : MonoBehaviour
     {
         get
         {
-            float rot = _barrels.rotation.eulerAngles.z % 60;
+            float rot = _barrels.rotation.eulerAngles.z % (360 / _numberOfBarrels);
 
-            return rot > 60 - _currentSpeed * Time.fixedDeltaTime && rot < 60;
+            return rot > (360 / _numberOfBarrels) - _currentSpeed * Time.fixedDeltaTime && rot < (360 / _numberOfBarrels);
         }
     }
     private float WindUpSpeed { get => RotationSpeed / _windUpTime; }
@@ -54,16 +55,14 @@ public class HandCannon : MonoBehaviour
         var fx = Instantiate(_hitFX, collision.intersection, Quaternion.identity);
         fx.transform.LookAt(collision.normal);
 
-        // DELETE THIS And make an hitbox class to automatically send damage
-        var collisonCollider = collision.colliderComponent;
-        if (collisonCollider == null) return;
-        var collisionTransform = collisonCollider.transform;
-        if (collisionTransform == null) return;
-        var root = collisionTransform.root;
-        if (root == null) return;
-        var health = root.GetComponent<Health>();
-        if (health == null) return;       
-        health.DealDamage(_damage);      
+        if (collision.colliderComponent != null)
+        {
+            var hitbox = collision.colliderComponent.GetComponent<HitboxArea>();
+            if (hitbox != null)
+            {
+                hitbox.Hit(_damage);
+            }
+        }
     }
 
     private void FixedUpdate()
