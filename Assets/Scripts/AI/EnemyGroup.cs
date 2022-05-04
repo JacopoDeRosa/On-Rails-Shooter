@@ -36,7 +36,6 @@ public class EnemyGroup : MonoBehaviour
         if (_deadEnemies == _enemies.Count)
         {
             onAllDead.Invoke();
-            print("All enemies of " + name + " are dead.");
         }
     }
 }

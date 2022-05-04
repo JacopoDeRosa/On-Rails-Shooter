@@ -55,6 +55,5 @@ public class HitboxController : MonoBehaviour
 
         float damage = data.Damage * multiplier;
         _health.DealDamage(damage);
-        print(damage + " Damage to " + data.Bodypart);
     }
 }
