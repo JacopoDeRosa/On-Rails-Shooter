@@ -115,6 +115,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8676327903358910765}
     - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
+      propertyPath: _roundPerMinute
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: _numberOfBarrels
       value: 6
       objectReference: {fileID: 0}
@@ -122,17 +126,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gau 34 Cannon
       objectReference: {fileID: 0}
+    - target: {fileID: 7239228421907278780, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.z

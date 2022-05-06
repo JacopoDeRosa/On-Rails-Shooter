@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class RotaryCannon : MonoBehaviour
 {
-    [SerializeField] private float _roundsPerMinute;
+    [SerializeField] private float _roundPerMinute;
     [SerializeField] private float _windUpTime;
     [SerializeField] private float _windDownTime;
     [SerializeField] private float _damage;
@@ -28,7 +28,7 @@ public class RotaryCannon : MonoBehaviour
     private bool _startedShooting = false;
     private bool _startedWindingDown = false;
 
-    private float RotationSpeed { get => _roundsPerMinute; }
+    private float RotationSpeed { get => (360 / _numberOfBarrels) * (_roundPerMinute / 60); }
     private bool BarrelAligned
     {
         get
@@ -40,7 +40,6 @@ public class RotaryCannon : MonoBehaviour
     }
     private float WindUpSpeed { get => RotationSpeed / _windUpTime; }
     private float WindDownSpeed { get => RotationSpeed / _windDownTime; }
-
     public void StartFiring()
     {
         _firing = true;

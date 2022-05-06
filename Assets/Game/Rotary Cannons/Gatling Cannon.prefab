@@ -106,14 +106,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.4150001
       objectReference: {fileID: 0}
+    - target: {fileID: 6925258524689861812, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e634ea5284834e8419b214648bdc1913, type: 3}
     - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: _damage
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: _barrels
       value: 
       objectReference: {fileID: 71136726503272509}
+    - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
+      propertyPath: _roundPerMinute
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: _numberOfBarrels
       value: 5
@@ -126,17 +134,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gatling Cannon
       objectReference: {fileID: 0}
+    - target: {fileID: 7239228421907278780, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.z

@@ -20,9 +20,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 4cffb25025233bb4595ba37e4d7dabc9, type: 3}
     - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
+      propertyPath: _damage
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: _barrels
       value: 
       objectReference: {fileID: 3529408743762517541}
+    - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
+      propertyPath: _roundPerMinute
+      value: 1750
+      objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278778, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: onWindUp.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
@@ -31,17 +39,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: GSh Cannon
       objectReference: {fileID: 0}
+    - target: {fileID: 7239228421907278780, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 7239228421907278781, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.z
