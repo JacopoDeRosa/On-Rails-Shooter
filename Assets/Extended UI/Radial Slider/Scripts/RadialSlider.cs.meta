@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4f3e2f25319daa14fb084b3c3b50179c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _fill: {instanceID: 0}
+  - _backGround: {instanceID: 0}
+  - _sliderSprite: {fileID: 21300000, guid: f89942831efcf214f885f77520f97a2d, type: 3}
+  - _fillerSprite: {fileID: 21300000, guid: 3d65b313e2b72524bbc6a9908320b244, type: 3}
+  - _text: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 941b4f0dda25a5d49ae0cd7edb491dbb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _fill: {instanceID: 0}
+  - _mask: {instanceID: 0}
+  - _maskSprite: {fileID: 21300000, guid: 10f3ccf0cb81eb2448eb5b3025b059e6, type: 3}
+  - _fillSprite: {fileID: 21300000, guid: 3d65b313e2b72524bbc6a9908320b244, type: 3}
+  - _text: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
