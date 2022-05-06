@@ -51,16 +51,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6637887623504014336, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba59a8c1c7e09f44ca4ef0878540eda1, type: 2}
+    - target: {fileID: -736545851740328993, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
       propertyPath: m_Name
       value: M134
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1610810208848771444, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2814614548760081455, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713950456446758084, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba59a8c1c7e09f44ca4ef0878540eda1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
+--- !u!23 &3017461540679377579 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5713950456446758084, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
+  m_PrefabInstance: {fileID: 7398335438603701871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8676327903358910765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2217082323494293314, guid: 7c0934883edbe5f48b3c369af93fa48f, type: 3}
@@ -73,6 +98,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2403494908000415834, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
+      propertyPath: _barrelsRenderer
+      value: 
+      objectReference: {fileID: 3017461540679377579}
     - target: {fileID: 4274093658966405019, guid: e5db2c8765dd6b94da5220ff0f1e1355, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.078999996
