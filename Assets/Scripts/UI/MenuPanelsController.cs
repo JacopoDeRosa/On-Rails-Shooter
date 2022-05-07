@@ -6,18 +6,13 @@ public class MenuPanelsController : MonoBehaviour
 {
     [SerializeField] private FoldingBar[] _menus;
 
-    FoldingBar _activeMenu;
-
-    private void Start()
-    {
-        foreach (var item in _menus)
-        {
-            item.Toggle(false);
-        }
-    }
+    private FoldingBar _activeMenu;
+    private bool _busy;
 
     public void SetMenuActive(int index)
     {
+        if (_busy) return;
+
         if(index >= _menus.Length)
         {
             return;
@@ -27,12 +22,15 @@ public class MenuPanelsController : MonoBehaviour
 
     private IEnumerator SwitchToMenu(int index)
     {
+        _busy = true;
+
         var targetMenu = _menus[index];
 
         if(_activeMenu != null)
         {
             if (_activeMenu == targetMenu)
             {
+                _busy = false;
                 yield break;
             }
             else
@@ -44,11 +42,6 @@ public class MenuPanelsController : MonoBehaviour
         _activeMenu = targetMenu;
         yield return targetMenu.Toggle();
 
-    }
-
-    public void CloseActiveMenu()
-    {
-        if (_activeMenu == null) return;
-        _activeMenu.Toggle(false);
+        _busy = false;
     }
 }

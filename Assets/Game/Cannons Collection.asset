@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4314744084c9584d853c86f3d313a7b, type: 3}
+  m_Name: Cannons Collection
+  m_EditorClassIdentifier: 
+  _availableCannons:
+  - {fileID: 1410162662095836937, guid: 70695dcd43c1cec458126b1510c3a3b6, type: 3}
+  - {fileID: 8234690197986889811, guid: 0f98c30aa8911b742b569974cd2696e8, type: 3}
+  - {fileID: 1522242521032127718, guid: 501515dd60a3eda4c8301f0e0afa85f5, type: 3}
+  - {fileID: 7338954521227610968, guid: a03ff343accf13e41a531d0e3920d1b0, type: 3}

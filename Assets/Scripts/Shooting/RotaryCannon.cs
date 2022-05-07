@@ -49,6 +49,8 @@ public class RotaryCannon : MonoBehaviour
     private float WindDownSpeed { get => RotationSpeed / _windDownTime; }
 
     public float MaxHeat { get => _termalShutdownPoint; }
+    public float RPM { get => _roundPerMinute; }
+    public Transform Barrels { get => _barrels; }
 
 
     public void StartFiring()

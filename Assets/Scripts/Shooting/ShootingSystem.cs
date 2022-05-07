@@ -16,6 +16,8 @@ public class ShootingSystem : MonoBehaviour
     private Vector3 _targetPoint;
     private Vector3 _currentAimPoint;
 
+    public RotaryCannon ActiveCannon { get => _cannon; }
+
     private void Start()
     {
         if (_input == null) _input = FindObjectOfType<PlayerInput>();
@@ -81,5 +83,10 @@ public class ShootingSystem : MonoBehaviour
         }
 
         _outOfAmmo = true;
+    }
+
+    public void SetCannon(RotaryCannon cannon)
+    {
+        _cannon = cannon;
     }
 }

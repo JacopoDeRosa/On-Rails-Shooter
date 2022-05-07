@@ -34362,7 +34362,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7239228421907278781}
   - component: {fileID: 7239228421907278778}
-  - component: {fileID: 2403494908000415834}
   m_Layer: 0
   m_Name: Rotary Cannon Base
   m_TagString: Untagged
@@ -34455,18 +34454,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2403494908000415834}
-        m_TargetAssemblyTypeName: HandCannonHeat, Assembly-CSharp
-        m_MethodName: SetFiring
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   onStoppedFiring:
     m_PersistentCalls:
       m_Calls:
@@ -34474,18 +34461,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Stop
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2403494908000415834}
-        m_TargetAssemblyTypeName: HandCannonHeat, Assembly-CSharp
-        m_MethodName: SetFiring
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -34539,74 +34514,6 @@ MonoBehaviour:
   onHeatChange:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2403494908000415834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7239228421907278780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b13e8649d613e048990210cdc6103bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cannon: {fileID: 7239228421907278778}
-  _barrelsRenderer: {fileID: 0}
-  _radialSlider: {fileID: 0}
-  _coolColor: {r: 0, g: 0, b: 0, a: 1}
-  _hotColor: {r: 766.9961, g: 8.031373, b: 0, a: 1}
-  _effectCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: -0.012093739
-      outSlope: -0.012093739
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.24219921
-    - serializedVersion: 3
-      time: 0.46990663
-      value: 0.01261536
-      inSlope: 0.08585414
-      outSlope: 0.08585414
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.45723385
-    - serializedVersion: 3
-      time: 0.7158101
-      value: 0.07951308
-      inSlope: 0.56720906
-      outSlope: 0.56720906
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.6773249
-      outWeight: 0.6460795
-    - serializedVersion: 3
-      time: 0.9062455
-      value: 0.4760547
-      inSlope: 4.610785
-      outSlope: 4.610785
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.024974752
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 4.5283027
-      outSlope: 4.5283027
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.008333325
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &7239228423694960457
 GameObject:
   m_ObjectHideFlags: 0
