@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
 public class RotaryCannon : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class RotaryCannon : MonoBehaviour
     [SerializeField] private float _windUpTime;
     [SerializeField] private float _windDownTime;
     [SerializeField] private float _damage;
+    [SerializeField] private int _numberOfBarrels;
+    [SerializeField] private float _heatPerShot;
+    [SerializeField] private float _termalShutdownPoint;
+    [SerializeField] private float _coolingPerSecond;
     [SerializeField] private Transform _barrels;
-    [SerializeField] private int _numberOfBarrels = 6;
     [SerializeField] private ParticleSystem _bullet;
     [SerializeField] private ParticleSystem _muzzleBlast;
     [SerializeField] private GameObject _hitFX;
@@ -20,9 +24,12 @@ public class RotaryCannon : MonoBehaviour
     public UnityEvent onStoppedFiring;
     public UnityEvent onWindDown;
     public UnityEvent onOutOfAmmoClick;
+    public UnityEvent<float> onHeatChange;
 
     private float _currentSpeed = 0;
     private bool _firing = false;
+    [ShowInInspector]
+    private float _currentHeat;
 
     private bool _startedWindingUp = false;
     private bool _startedShooting = false;
@@ -40,6 +47,10 @@ public class RotaryCannon : MonoBehaviour
     }
     private float WindUpSpeed { get => RotationSpeed / _windUpTime; }
     private float WindDownSpeed { get => RotationSpeed / _windDownTime; }
+
+    public float MaxHeat { get => _termalShutdownPoint; }
+
+
     public void StartFiring()
     {
         _firing = true;
@@ -48,7 +59,6 @@ public class RotaryCannon : MonoBehaviour
     {
         _firing = false;
     }
-
     public void OnParticleCollided(ParticleCollisionEvent collision)
     {
         var fx = Instantiate(_hitFX, collision.intersection, Quaternion.identity);
@@ -63,7 +73,6 @@ public class RotaryCannon : MonoBehaviour
             }
         }
     }
-
     private void FixedUpdate()
     {
         if (_firing)
@@ -83,6 +92,7 @@ public class RotaryCannon : MonoBehaviour
                 _currentSpeed = RotationSpeed;
                 TryResetWindingUp();
             }
+
             if (_currentSpeed == RotationSpeed && BarrelAligned)
             {
                 if (_startedShooting == false)
@@ -90,8 +100,10 @@ public class RotaryCannon : MonoBehaviour
                     onStartedFiring.Invoke();
                     _startedShooting = true;
                 }
+                AddHeat();
                 _bullet.Play();
                 _muzzleBlast.Play();
+
             }
         }
         else
@@ -108,19 +120,34 @@ public class RotaryCannon : MonoBehaviour
                     _startedWindingDown = true;
                 }
                 _currentSpeed -= WindDownSpeed * Time.fixedDeltaTime;
-            }
+            }        
             else
             {
                 TryResetWindDown();
                 _currentSpeed = 0;
             }
+
+            if (_currentHeat > 0)
+            {
+                _currentHeat -= _coolingPerSecond * Time.deltaTime;
+                onHeatChange.Invoke(_currentHeat);
+            }
+
         }
         if (_currentSpeed > 0)
         {
             _barrels.Rotate(new Vector3(0, 0, _currentSpeed * Time.fixedDeltaTime), Space.Self);
+        }     
+    }
+    private void AddHeat()
+    {
+        _currentHeat += _heatPerShot;
+        onHeatChange.Invoke(_currentHeat);
+        if(_currentHeat > _termalShutdownPoint)
+        {
+            StopFiring();
         }
     }
-
     private void TryResetWindingUp()
     {
         if (_startedWindingUp) _startedWindingUp = false;
@@ -133,7 +160,6 @@ public class RotaryCannon : MonoBehaviour
     {
         if (_startedWindingDown) _startedWindingDown = false;
     }
-
     public void OutOfAmmoClick()
     {
         onOutOfAmmoClick.Invoke();
