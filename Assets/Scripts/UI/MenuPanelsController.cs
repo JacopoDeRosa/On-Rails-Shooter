@@ -8,7 +8,7 @@ public class MenuPanelsController : MonoBehaviour
 
     FoldingBar _activeMenu;
 
-    private void Awake()
+    private void Start()
     {
         foreach (var item in _menus)
         {
@@ -49,7 +49,6 @@ public class MenuPanelsController : MonoBehaviour
     public void CloseActiveMenu()
     {
         if (_activeMenu == null) return;
-
-        StartCoroutine(_activeMenu.Toggle());
+        _activeMenu.Toggle(false);
     }
 }
