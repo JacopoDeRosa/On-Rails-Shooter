@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 public class FoldingBar : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class FoldingBar : MonoBehaviour
     {
        return Screen.width / _scaler.referenceResolution.x;
     }
+
+
     public void Toggle(bool status)
     {
         if (_busy) return;
@@ -46,13 +49,22 @@ public class FoldingBar : MonoBehaviour
         }
     }
 
-    public void Toggle()
+    
+    public IEnumerator Toggle()
     {
-        if (_busy) return;
-        Toggle(!_open);
-         
-    }
+        if (_busy) yield break;
 
+        if (_open == false)
+        {
+            _open = true;
+            yield return MoveToPosition(0);
+        }
+        else if (_open)
+        {
+            _open = false;
+            yield return MoveToPosition(_sinkAmount);
+        }
+    }
     private IEnumerator MoveToPosition(float position)
     {
         _busy = true;
@@ -98,7 +110,4 @@ public class FoldingBar : MonoBehaviour
 
         _busy = false;
     }
-
-
-
 }
