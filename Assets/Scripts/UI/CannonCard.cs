@@ -16,7 +16,6 @@ public class CannonCard : MonoBehaviour
     private void Start()
     {
         _cannon = _allCannons.GetCannon(_targetCannon);
-        print(_cannon.RPM);
         _nameText.text = _cannon.name;
         _rpmText.text = _cannon.RPM.ToString();
         _heatText.text = _cannon.MaxHeat.ToString();
