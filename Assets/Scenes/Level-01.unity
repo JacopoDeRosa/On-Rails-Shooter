@@ -45756,7 +45756,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d2194fcf7a1282341953329177744e3a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fd87e2ad7b272ab4fbf123a1d20e345a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -45870,7 +45870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 1358405099}
-  _startingTime: 62
+  _startingTime: 0
 --- !u!1 &1373038391
 GameObject:
   m_ObjectHideFlags: 0
@@ -70813,7 +70813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f89942831efcf214f885f77520f97a2d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44ccd60edb479984cb19b2219e300d76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -71039,7 +71039,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c02911fb8be8f148a5b85c36b469b78, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1666cbc13527c394aad4b1e0199a0a98, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -71141,8 +71141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fill: {fileID: 3362237484667276579}
   _mask: {fileID: 3362237484018170195}
-  _maskSprite: {fileID: 21300000, guid: f89942831efcf214f885f77520f97a2d, type: 3}
-  _fillSprite: {fileID: 21300000, guid: 5c02911fb8be8f148a5b85c36b469b78, type: 3}
+  _maskSprite: {fileID: 21300000, guid: 44ccd60edb479984cb19b2219e300d76, type: 3}
+  _fillSprite: {fileID: 21300000, guid: 1666cbc13527c394aad4b1e0199a0a98, type: 3}
   _fillColor: {r: 1, g: 0.4984324, b: 0, a: 1}
   _baseColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   _textColor: {r: 1, g: 1, b: 1, a: 1}
